@@ -12,5 +12,5 @@
 ### 运行
 6. 在控制台运行命令 `node index.js`
 7. 浏览器访问路径：`http://localhost:3000/docs`
-
+---
 具体的yaml写作格式、OpenAPI风格，请参考 https://www.runoob.com/swagger/swagger-tutorial.html

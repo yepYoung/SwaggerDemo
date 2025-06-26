@@ -1,14 +1,22 @@
 openapi: 3.0.0
 info:
-  title: 示例 API
+  title: MindHaven API
   version: 1.0.0
+
+
+servers:
+  - url: https://api.example.com/v1
+    description: 生产环境
+  - url: https://staging-api.example.com/v1
+    description: 测试环境
+
 paths:
   /hello:
     get:
       summary: 打招呼
       responses:
         '200':
-          description: 成功
+          description: 打招呼成功
           content:
             application/json:
               schema:
@@ -16,3 +24,31 @@ paths:
                 properties:
                   message:
                     type: string
+  /users/{userId}:
+    get:
+      summary: 获取特定用户ID
+      operationId: getUserById
+      tags:
+        -users
+      parameters:
+        - name: userId
+          description: 用户ID
+          required: true
+          in: path
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+             schema:
+                $ref: '#/components/schemas/User'
+        '404':
+          description: 用户不存在
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  
+

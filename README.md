@@ -1,5 +1,5 @@
 # SwaggerDemo
-> 一个可以直接使用的swagger demo。
+> 一个可以直接使用的swagger demo，很省事地使用swagger
 
 ## 使用步骤
 > 前提：存在node.js环境，如果没有请下载安装配置 https://nodejs.cn/download/
